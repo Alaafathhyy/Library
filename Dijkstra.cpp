@@ -1,24 +1,19 @@
 
-int n;
-vector<pair<ll, ll>> adj[N];
-ll dis[N];
-void dijkstra(int src) {
-    memset(dis, '?', n * sizeof dis[0]);
-    priority_queue<pair<ll, int>> q;
+ll dijkstra(int src) {
+    memset(dis, '?', sizeof dis);
+    priority_queue<pll, vector<pll >, greater<pll > > q;
     dis[src] = 0;
-    q.emplace(0, src);
+    q.emplace(0, 1);
     while (!q.empty()) {
         int u = q.top().second;
-        ll d = -q.top().first;
+        ll c = q.top().first;
         q.pop();
-        if (d != dis[u]) continue;
-        for (auto &e : adj[u]) {
-            int v = e.first;
-            ll nd = dis[u] + e.second;
-            if (nd < dis[v]) {
-                dis[v] = nd;
-                q.emplace(-nd, v);
-            }
+        if (dis[u] != c)continue;
+        if (u == n) return dis[u];
+        for (auto a:vec[u]) {
+            if (dis[a.first] > a.second + c)
+                dis[a.first] = a.second + c, q.emplace(dis[a.first], a.first);
         }
     }
+    return -1;
 }
