@@ -31,7 +31,7 @@ void ternary(ll l, ll r) {
         ternary(mid1, r);
     }
 }
-
+// for doubles
 double ternary_search(double l, double r) {
     double eps = 1e-9;              
     while (r - l > eps) {
