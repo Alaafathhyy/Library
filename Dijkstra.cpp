@@ -1,5 +1,7 @@
-vector<pair<int,int>>adj;
-int dist[N];
+
+int n;
+vector<pair<ll, ll>> adj[N];
+ll dis[N];
 void dijkstra(int src) {
     memset(dis, '?', n * sizeof dis[0]);
     priority_queue<pair<ll, int>> q;
