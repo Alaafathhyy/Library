@@ -33,3 +33,23 @@ vector<int> getFactorization(int x)
     } 
     return ret; 
 } 
+
+int mult(ll x, ll y, ll &mod) {
+    return (1LL * (x%mod) * (y%mod))%mod;
+}
+ 
+ll add(ll x, ll y) {
+    return (x + y) % MOD;
+}
+ 
+ll sub(ll x, ll y) {
+    return (x - y + MOD) % MOD;
+}
+ll fastPow(ll a, int p = MOD - 2, int m = MOD) {
+    if (p == 0)
+        return 1;
+    if (p % 2 == 1)
+        return (a * fastPow(a, p - 1, m)) % m;
+    ll c = fastPow(a, p / 2, m);
+    return (c * c) % m;
+}
