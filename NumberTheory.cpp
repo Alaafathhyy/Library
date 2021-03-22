@@ -53,3 +53,17 @@ ll fastPow(ll a, int p = MOD - 2, int m = MOD) {
     ll c = fastPow(a, p / 2, m);
     return (c * c) % m;
 }
+
+long long int mult(long long int x,long long int y)
+{
+    long long int ans =1;
+    while(y>0)
+    {
+        if(y%2)
+            ans = (ans * x) % mod;
+        x = (x * x) % mod;
+        y=y>>1;
+
+    }
+    return ans;
+}
