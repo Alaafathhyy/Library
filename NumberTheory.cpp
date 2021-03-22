@@ -34,7 +34,7 @@ vector<int> getFactorization(int x)
     return ret; 
 } 
 
-int mult(ll x, ll y, ll &mod) {
+ll mult(ll x, ll y) {
     return (1LL * (x%mod) * (y%mod))%mod;
 }
  
