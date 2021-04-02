@@ -67,3 +67,6 @@ long long int mult(long long int x,long long int y)
     }
     return ans;
 }
+ll inv(ll a, ll p){
+    return pow(a, p-2, p);
+}
